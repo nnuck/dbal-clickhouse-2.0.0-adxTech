@@ -38,23 +38,15 @@ class ClickHouseConnection implements Connection, ServerInfoAwareConnection
         string $password,
         AbstractPlatform $platform
     ) {
-        $useSession = (bool) ($params['driverOptions']['use_session'] ?? false);
-        unset($params['driverOptions']['use_session']);
-        $this->client = new Client(
+        $this->client   = new Client(
             [
-                'host' => $params['host'] ?? 'localhost',
-                'port' => $params['port'] ?? 8123,
+                'host'     => $params['host'] ?? 'localhost',
+                'port'     => $params['port'] ?? 8123,
                 'username' => $user,
                 'password' => $password,
             ],
-            array_merge(
-                ['database' => $params['dbname'] ?? 'default'],
-                $params['driverOptions'] ?? []
-            )
+            array_merge(['database' => $params['dbname'] ?? 'default'], $params['driverOptions'] ?? [])
         );
-        if ($useSession) {
-            $this->client->useSession();
-        }
         $this->platform = $platform;
     }
 
