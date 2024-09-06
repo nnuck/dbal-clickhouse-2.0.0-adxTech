@@ -1,0 +1,53 @@
+{
+    "name": "friendsofdoctrine/dbal-clickhouse",
+    "type": "library",
+    "description": "Doctrine DBAL driver for ClickHouse",
+    "keywords": [
+        "doctrine",
+        "dbal",
+        "clickhouse",
+        "driver"
+    ],
+    "homepage": "https://github.com/friendsofdoctrine/dbal-clickhouse",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mochalygin Aleksandr",
+            "email": "a@mochalygin.ru"
+        },
+        {
+            "name": "Mitrofanov Nikolay",
+            "email": "mitrofanovnk@yandex.ru"
+        },
+        {
+            "name": "Sanikovich Aliaksei",
+            "email": "asanikovich@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "ext-pcre": "*",
+        "ext-mbstring": "*",
+        "doctrine/dbal": "^3.0",
+        "smi2/phpclickhouse": "^1.0"
+    },
+    "require-dev": {
+        "doctrine/coding-standard": "^4.0 || ^9.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "FOD\\DBALClickHouse\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FOD\\DBALClickHouse\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
